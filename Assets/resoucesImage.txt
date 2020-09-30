@@ -1,0 +1,9 @@
+headerBackground
+https://www.gamespot.com/articles/spellbreak-an-rpg-like-battle-royale-is-no-fortnit/1100-6476384/
+homeBackground
+https://playspellbreak.com/
+
+=====Color
+blue
+rgb(77, 121, 255)
+white

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy | SpellBuild</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+        function validationForm(){
+            var fullName = document.getElementById("tfFullName").value;
+            var email = document.getElementById("tfEmail").value;
+            var eM = document.getElementById("errMsg");
+            
+            if(fullName == ""){
+                eM.innerHTML = "Full name field must be filled"
+            }else if(letterOnly(fullName) == false){
+                eM.innerHTML = "Full name field must consist of letter only"
+            }else if(email == ""){
+                eM.innerHTML = "Email field must be filled";
+            }
+        }
+
+        function letterOnly(fullName){
+            var a = 0;
+            for(var i = 0; i < fullName.length; i++){
+                if((fullName.charCodeAt(i) < 65 || fullName.charCodeAt(i) > 81) && (fullName.charCodeAt(i) < 97 || fullName.charCodeAt(i) > 123)) a++;
+            }			
+            if(a == 0){
+                return true;
+            }
+            else{
+                return false;
+            }  
+        } 
+    </script>
+</head>
+<body>
+    <header>
+        <div class="head_nav">
+            <span>SpellBuild</span>
+            <ul class="main_nav">
+                <li><a href="HomePage.html">Home</a></li>
+                <li><a href="MediaPage.html">Media</a></li>
+                <li><a href="AboutUsPage.html">About Us</a></li>
+                <li><a href="CommunityPage.html">Community</a></li>
+                <li class="is_active"><a href="BuyPage.html">Buy</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>
+                <ul>
+                    <br>
+                    <li>Form</li>
+                    <br>
+                    <hr>
+                </ul>
+            </h1>
+        </div>
+    </header>
+    <div class="contentBuy">
+        Order Form to Buy
+        <br>
+        <br>
+        <div class="buyBackground">
+            <form action="">
+                <input type="text" id="tfFullName" placeholder="Input Your Full Name">
+                <input type="text" id="tfEmail" placeholder="Input Your Email">
+                <input type="text" id="tfUsername" placeholder="Input Your Username">
+                <input type="password" id="tfPassword" placeholder="Input Your Password">
+                <input type="password" id="tfConfirmPassword" placeholder="Input Your Confirm Password">
+                <label>Your Gender :</label>
+                <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" name="gender" id="rbMale"> Male <br>
+                &nbsp; &nbsp; &nbsp; &nbsp;<input type="radio" name="gender" id="rbFemale"> Female <br>
+                <label for="">Quanity Amount : &nbsp; &nbsp;</label>
+                <input type="number" id="tfQuantity" value="0">
+                <textarea name="tfAddresses" id="tfAddress" cols="30" rows="5" placeholder="Your Full Address (Ex: Melati Street 7, Tangerang)"></textarea>
+                <input type="checkbox" name="" id="" value=""> I Agree with terms and conditions.
+                <br>
+                <div id="errMsg" style="color:red;" align="center"> &nbsp;
+                </div>
+                <div class="posButton">
+                    <input type="button" value="BUY NOW" onclick="validationForm();">
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <span>SpellBuild</span>
+        <br>
+        <br>
+        &copy; 2020 Andri & Devia Group. All Rights Reserved.
+        <br>
+        Terms of Service | Privacy Policy
+    </footer>
+</body>
+</html>
